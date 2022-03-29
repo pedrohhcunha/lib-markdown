@@ -1,1 +1,1 @@
-console.log("This ir my program running")
+console.log("This is my program running")
