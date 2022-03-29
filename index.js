@@ -1,8 +1,8 @@
 //Importando o módulo fs, para lidar com arquivos
 const fs = require('fs')
 
-//Criando função para ler o arquivode um post
-const getFile = (fileName) => {
+//Criando função sncrona para ler o arquivo de um post
+const getFileSync = (fileName) => {
 
     //Lendo arquivo de um post no diretório posts
     fs.readFile(fileName, 'utf8', (error, data) => {
@@ -15,4 +15,4 @@ const getFile = (fileName) => {
 }
 
 //Executando a função de busca do arquivo
-getFile('./files/post.md')
+getFileSync('./files/post.md')
