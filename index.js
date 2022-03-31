@@ -1,21 +1,13 @@
-//Importando o módulo fs, para lidar com arquivos
-const fs = require('fs')
+//Importando função para transforma arquivo em texto
+const fileToText = require('./utils/fileToText')
 
-//Criando função moderna assincrona para ler o arquivo de um post
-const getFileAsyncModern = async (fileName) => {
+//Importando função para buscar links
+const findMarkdownLinks = require('./utils/findMarkdownLinks')
 
-    try{
-        //Lendo o arquivo
-        const data = await fs.promises.readFile(fileName, 'utf8')
-
-        //Usando dados lidos do arquivo
-        console.log("Texto do post: ", data)
-    
-    }
-    //Executando o catch caso ocorra um erro
-    catch(error){
-        console.log(error)
-    }
+const checkLinks  = async () => {
+    let text = await fileToText('./files/post.md')
+    let links = findMarkdownLinks(text)
+    console.log("Links", links)
 }
 
-getFileAsyncModern('./files/post.md')
+checkLinks()
