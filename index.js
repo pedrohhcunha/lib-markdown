@@ -1,13 +1,8 @@
-//Importando função para transforma arquivo em texto
-const fileToText = require('./utils/fileToText')
+//Importando a função principal da nossa aplicação
+const checkLinks = require('./utils/checkLinks')
 
-//Importando função para buscar links
-const findMarkdownLinks = require('./utils/findMarkdownLinks')
+//Importando o pathname passado via cli
+const pathName = process.argv[2]
 
-const checkLinks  = async () => {
-    let text = await fileToText('./files/post.md')
-    let links = findMarkdownLinks(text)
-    console.log("Links", links)
-}
-
-checkLinks()
+//Executando a função para checar os links passando o pathName
+checkLinks(pathName)
