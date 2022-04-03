@@ -4,7 +4,7 @@ const fileToText = require('./fileToText')
 //Importando função para buscar links
 const findMarkdownLinks = require('./findMarkdownLinks')
 
-module.exports = async function checkLinks (pathName) {
+module.exports = async function main (pathName) {
     let text = await fileToText(pathName)
     let links = findMarkdownLinks(text)
     console.log("Links", links)
