@@ -4,14 +4,14 @@ const fs = require('fs')
 //Exportando a função que le o arquivo e retorna o texto
 module.exports = async function fileToText(fileName) {
     try{
-        //Lendo o arquivo
-        const data = await fs.promises.readFile(fileName, 'utf8')
 
-        return data
+        //Lendo o arquivo
+        return await fs.promises.readFile(fileName, 'utf8')
     }
     
     //Executando o catch caso ocorra um erro
     catch(error){
-        console.log(error)
+
+        throw new Error("Erro: houve uma falha ao ler o arquivo!")
     }
 }
