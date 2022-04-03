@@ -33,12 +33,12 @@ module.exports = async function main (pathName) {
             } else {
 
                 //Retornando erro
-                throw new Error('Error: o PathName não representa um arquivo!')
+                throw new Error('O PathName não representa um arquivo!')
             }
         } else {
 
             //Retornando erro
-            throw new Error('Error: o PathName não existe!')
+            throw new Error('O PathName não existe!')
         }
     } catch(error){
             

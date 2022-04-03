@@ -12,6 +12,6 @@ module.exports = async function fileToText(fileName) {
     //Executando o catch caso ocorra um erro
     catch(error){
 
-        throw new Error("Erro: houve uma falha ao ler o arquivo!")
+        throw new Error("Houve uma falha ao ler o arquivo!")
     }
 }

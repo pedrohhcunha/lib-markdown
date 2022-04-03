@@ -11,7 +11,7 @@ module.exports = function findMarkdownLinks(text){
 		}
 		return links
 	} catch(error){
-		
-		throw new Error("Erro: houve uma falha ao buscar os links!")
+
+		throw new Error("Houve uma falha ao buscar os links!")
 	}
 }

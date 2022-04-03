@@ -13,6 +13,6 @@ module.exports = async function checkLinkStatus(link) {
     } catch{
             
         //Retornando o erro
-        throw new Error("Erro: houve uma falha ao buscar o status do link!")
+        throw new Error("Houve uma falha ao buscar o status do link!")
     }
 }
