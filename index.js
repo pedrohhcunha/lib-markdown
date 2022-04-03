@@ -1,5 +1,5 @@
 //Importando a função principal da nossa aplicação
-const checkLinks = require('./utils/checkLinks')
+const checkLinks = require('./src/utils/checkLinks')
 
 //Importando o pathname passado via cli
 const pathName = process.argv[2]
