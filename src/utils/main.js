@@ -13,6 +13,7 @@ const fs = require('fs')
 module.exports = async function main (pathName) {
 
     try{
+
         //Verifica se o pathName é valido
         if(fs.existsSync(pathName)){
 
@@ -29,15 +30,17 @@ module.exports = async function main (pathName) {
                 for await (let link of links) {
                     link.status = await checkLinkStatus(link.link)
                 }
+
+                //Imprimindo uam tabela com os links e seus status
                 console.table(links)
             } else {
 
-                //Retornando erro
+                //Disparando erro
                 throw new Error('O PathName não representa um arquivo!')
             }
         } else {
 
-            //Retornando erro
+            //Disparando erro
             throw new Error('O PathName não existe!')
         }
     } catch(error){

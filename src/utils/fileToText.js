@@ -3,6 +3,7 @@ const fs = require('fs')
 
 //Exportando a função que le o arquivo e retorna o texto
 module.exports = async function fileToText(fileName) {
+    
     try{
 
         //Lendo o arquivo

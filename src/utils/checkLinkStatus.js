@@ -5,14 +5,17 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 module.exports = async function checkLinkStatus(link) {
     
     try{
+
         //Executando a solicitação HTTP
         let response = await fetch(link);
 
         //Retornando o status da resposta
         return response.status
+
+    //Executando o catch caso ocorra um erro
     } catch{
             
-        //Retornando o erro
+        //Disparando erro
         throw new Error("Houve uma falha ao buscar o status do link!")
     }
 }
