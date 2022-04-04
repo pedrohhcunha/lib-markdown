@@ -32,7 +32,7 @@ module.exports = async function main (pathName) {
                 }
 
                 //Imprimindo uam tabela com os links e seus status
-                console.table(links)
+                return console.table(links)
             } else {
 
                 //Disparando erro
@@ -46,6 +46,6 @@ module.exports = async function main (pathName) {
     } catch(error){
             
         //Imprimindo mensagem de erro
-        console.error(error)
+        return console.error(error)
     }
 }
