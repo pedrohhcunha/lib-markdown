@@ -4,18 +4,22 @@ const fetch = require("node-fetch-commonjs")
 //Criando função para verificar o status da URL
 module.exports = async function checkLinkStatus(link) {
     
-    try{
-    
-        //Executando a solicitação HTTP
-        let response = await fetch(link);
+    if(typeof link === 'string'){
+        try{
 
-        //Retornando o status da resposta
-        return response.status
+            //Executando a solicitação HTTP
+            const response = await fetch(link)
 
-    //Executando o catch caso ocorra um erro
-    } catch(error){
-            
-        //Disparando erro
-        throw error
+            //Retornando o status da resposta
+            return response.status
+        } catch(error){
+
+            //Disparando erro caso ocorra algum problema
+            throw new Error(error)
+        }
+    } else {
+        
+        //Disparando erro caso o parâmetro não seja uma string
+        throw new Error('O Parâmetro informado não é uma string')
     }
 }
