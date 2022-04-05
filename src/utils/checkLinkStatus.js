@@ -1,11 +1,11 @@
 //Importando módulo para executar a solicitação HTTP
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args))
+const fetch = require("node-fetch-commonjs")
 
 //Criando função para verificar o status da URL
 module.exports = async function checkLinkStatus(link) {
     
     try{
-
+    
         //Executando a solicitação HTTP
         let response = await fetch(link);
 
@@ -13,9 +13,9 @@ module.exports = async function checkLinkStatus(link) {
         return response.status
 
     //Executando o catch caso ocorra um erro
-    } catch{
+    } catch(error){
             
         //Disparando erro
-        throw new Error("Houve uma falha ao buscar o status do link!")
+        throw error
     }
 }
