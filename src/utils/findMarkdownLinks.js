@@ -1,4 +1,5 @@
 module.exports = function findMarkdownLinks(text){
+	if(typeof text !== 'string') throw new Error('Text must be a string')
 
 	try{
 
