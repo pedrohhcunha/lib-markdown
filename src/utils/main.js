@@ -12,40 +12,36 @@ const fs = require('fs')
 
 module.exports = async function main (pathName) {
 
-    try{
+    //Verifica se o pathName é valido
+    if(fs.existsSync(pathName)){
 
-        //Verifica se o pathName é valido
-        if(fs.existsSync(pathName)){
+        //Verifica se o pathName representa um arquivo
+        if(fs.lstatSync(pathName).isFile()){
 
-            //Verifica se o pathName representa um arquivo
-            if(fs.lstatSync(pathName).isFile()){
+            //Busca o texto do arquivo
+            let text = await fileToText(pathName)
 
-                //Busca o texto do arquivo
-                let text = await fileToText(pathName)
-
-                //Busca os links do texto
-                let links = findMarkdownLinks(text)
-                
-                //Verifica o status de cada link na lista de links
-                for await (let link of links) {
-                    link.status = await checkLinkStatus(link.link)
-                }
-
-                //Imprimindo uam tabela com os links e seus status
-                return console.table(links)
-            } else {
-
-                //Disparando erro
-                throw new Error('O PathName não representa um arquivo!')
+            //Busca os links do texto
+            let links = findMarkdownLinks(text)
+            
+            //Verifica o status de cada link na lista de links
+            for await (let link of links) {
+                link.status = await checkLinkStatus(link.link)
             }
+
+            //Imprimindo uam tabela com os links e seus status
+            console.table(links)
+
+            return true
         } else {
 
             //Disparando erro
-            throw new Error('O PathName não existe!')
+            throw new Error('O PathName não representa um arquivo!')
         }
-    } catch(error){
-            
-        //Imprimindo mensagem de erro
-        return console.error(error)
+    } else {
+        
+
+        //Disparando erro
+        throw new Error('O PathName não existe!')
     }
 }
