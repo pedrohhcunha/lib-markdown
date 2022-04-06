@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 //Importando a função principal da nossa aplicação
 const main = require('./src/utils/main')
 
