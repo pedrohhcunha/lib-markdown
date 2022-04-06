@@ -16,11 +16,6 @@
     "url" : "https://github.com/pedrohhcunha/lib-markdown/issues",
     "email" : "phhcpedrohhcunha@gmail.com"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-    }
-  ],
   "bin": {
     "markdown-link-status-check": "./index.js"
   },
