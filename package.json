@@ -1,20 +1,27 @@
 {
   "name": "markdown-link-status-check",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Test HTTP status of all links in a markdown file",
-    "main": "index.js",
-    "scripts": {
+  "main": "index.js",
+  "scripts": {
     "start": "node index.js",
     "test": "jest ./src/test/"
   },
   "preferGlobal": true,
-  "keywords": ["markdown", "link", "status", "check", "href", "HTTP"],
+  "keywords": [
+    "markdown",
+    "link",
+    "status",
+    "check",
+    "href",
+    "HTTP"
+  ],
   "author": "Pedrohhcunha",
   "homepage": "https://github.com/pedrohhcunha",
   "license": "ISC",
   "bugs": {
-    "url" : "https://github.com/pedrohhcunha/lib-markdown/issues",
-    "email" : "phhcpedrohhcunha@gmail.com"
+    "url": "https://github.com/pedrohhcunha/lib-markdown/issues",
+    "email": "phhcpedrohhcunha@gmail.com"
   },
   "bin": {
     "markdown-link-status-check": "./index.js"
