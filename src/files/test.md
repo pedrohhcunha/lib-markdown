@@ -1,1 +1,0 @@
-São geralmente recuperados a partir de um objeto [linkA](https://www.google.com/) que é retornado como resultado da seleção, pelo usuário, de arquivos através do elemento [linkB](https://www.google.com/)
